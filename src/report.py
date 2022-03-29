@@ -7,7 +7,7 @@ st.title('📊 Reporte: Consumo Global de Energía y Generación Renovable')
 
 @st.cache
 def load_data(nrows):
-    df_Continent = pd.read_csv('data\Continent_Consumption_TWH.csv',nrows=nrows)
+    df_Continent = pd.read_csv('.\data\Continent_Consumption_TWH.csv',nrows=nrows)
     return df_Continent
 
 data_load_state = st.text('Loading data...')
