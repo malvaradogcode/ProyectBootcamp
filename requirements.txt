@@ -2,3 +2,4 @@ streamlit
 pandas
 numpy
 Path
+tangled_up_in_unicode
