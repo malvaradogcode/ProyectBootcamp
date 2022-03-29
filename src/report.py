@@ -2,7 +2,7 @@ from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
-from tangled_up_in_unicode import lowercase
+#from tangled_up_in_unicode import lowercase
 
 st.title('📊 Reporte: Consumo Global de Energía y Generación Renovable')
 
