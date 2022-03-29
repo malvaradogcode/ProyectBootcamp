@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title('Reporte: Consumo Global de Energía y Generación Renovable')
+st.title('📊 Reporte: Consumo Global de Energía y Generación Renovable')
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
