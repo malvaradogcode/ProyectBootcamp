@@ -2,13 +2,19 @@ from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
+from tangled_up_in_unicode import lowercase
 
 st.title('📊 Reporte: Consumo Global de Energía y Generación Renovable')
 
+DATE_COLUMN = 'World'
+DATA_URL = ('https://drive.google.com/file/d/1HFyzc4sfV93tA0CAMYSdFiYF1-v6q2n8/view?usp=sharing')
+
 @st.cache
 def load_data(nrows):
-    df_Continent = pd.read_csv('.\data\Continent_Consumption_TWH.csv',nrows=nrows)
-    return df_Continent
+    data = pd.read_csv(DATA_URL, nrows=nrows)
+    lowercase = lambda x: str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    return data
 
 data_load_state = st.text('Loading data...')
 data = load_data(10000)
