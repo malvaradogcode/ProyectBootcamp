@@ -7,13 +7,11 @@ from tangled_up_in_unicode import lowercase
 st.title('📊 Reporte: Consumo Global de Energía y Generación Renovable')
 
 DATE_COLUMN = 'World'
-DATA_URL = ('https://drive.google.com/file/d/1HFyzc4sfV93tA0CAMYSdFiYF1-v6q2n8/view?usp=sharing')
+DATA_URL = ('.\data\Continent_Consumption_TWH.csv')
 
 @st.cache
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
     return data
 
 data_load_state = st.text('Loading data...')
