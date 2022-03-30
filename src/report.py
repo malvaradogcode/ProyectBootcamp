@@ -1,17 +1,12 @@
-from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
-#from tangled_up_in_unicode import lowercase
 
 st.title('📊 Reporte: Consumo Global de Energía y Generación Renovable')
 
-DATE_COLUMN = 'World'
-DATA_URL = ('.\data\Continent_Consumption_TWH.csv')
-
 @st.cache
 def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
+    data = pd.read_csv('./data/Continent_Consumption_TWH.csv', nrows=nrows)
     return data
 
 data_load_state = st.text('Loading data...')
@@ -21,6 +16,10 @@ data_load_state.text("Done! (using st.cache)")
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
+
+st.subheader('XXX')
+st.write(data)
+
 
 # st.subheader('Number of pickups by hour')
 #hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
